@@ -40,7 +40,11 @@ Parameters:
 
   GitHubUser:
     Type: String
+<<<<<<< HEAD
     Default: YueChen1996
+=======
+    Default: SudKul
+>>>>>>> 09c426a86ebfad73538d54535bf040b0e527c192
     Description: GitHub username or organization
     MinLength: 3
     MaxLength: 100
