@@ -14,19 +14,11 @@ phases:
       # Get latest stable release kubectl
       - curl -LO https://storage.googleapis.com/kubernetes-release/release/`curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt`/bin/linux/amd64/kubectl
         # Command for specific kubectl version:
-<<<<<<< HEAD
       - curl -LO https://storage.googleapis.com/kubernetes-release/release/v1.19.0/bin/linux/amd64/kubectl
       - chmod +x ./kubectl ./aws-iam-authenticator
       - echo `kubectl version`
       - export PATH=$PWD/:$PATH
       - python3 -m pip install --upgrade --force pip
-=======
-        #- curl -LO https://storage.googleapis.com/kubernetes-release/release/v1.18.0/bin/linux/amd64/kubectl
-      - chmod +x ./kubectl ./aws-iam-authenticator
-      - echo `kubectl version`
-      - export PATH=$PWD/:$PATH
-      - python -m pip install --upgrade --force pip
->>>>>>> 09c426a86ebfad73538d54535bf040b0e527c192
       - apt-get update && apt-get -y install jq  && pip install --upgrade awscli
   pre_build:
       commands:
@@ -46,9 +38,6 @@ phases:
       - printf '[{"name":"simple_jwt_api","imageUri":"%s"}]' $REPOSITORY_URI:$TAG > build.json
 artifacts:
   files: build.json
-<<<<<<< HEAD
 env:
   parameter-store:         
     JWT_SECRET: JWT_SECRET
-=======
->>>>>>> 09c426a86ebfad73538d54535bf040b0e527c192
